@@ -1,6 +1,6 @@
-import styles from './Game.module.css';
 import { FieldLayout } from './FieldLayout';
-import { useState } from 'react';
+import PropTypes from 'prop-types';
+
 
 const WIN_PATTERNS = [
 	[0, 1, 2],
@@ -23,7 +23,6 @@ export const Field = ({
 	setIsGameEnded
 	}) => {
 	const clickOfMove = (index) => {
-		console.log('cklick')
 		if (field[index] === '' && !isGameEnded) {
 			const newField = [...field];
 			newField[index] = currentPlayer;
@@ -48,4 +47,14 @@ export const Field = ({
 			clickOfMove={clickOfMove}
 		/>
 	);
+};
+
+Field.prototypes = {
+	field: PropTypes.array,
+	setField: PropTypes.func,
+	currentPlayer: PropTypes.string,
+	setCurrentPlayer: PropTypes.func,
+	isGameEnded: PropTypes.bool,
+	setIsDraw: PropTypes.func,
+	setIsGameEnded: PropTypes.func,
 };

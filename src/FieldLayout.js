@@ -1,4 +1,5 @@
-import styles from './Game.module.css';
+import styles from './Field.module.css';
+import PropTypes from 'prop-types';
 
 export const FieldLayout = ({
 	field,
@@ -9,7 +10,7 @@ export const FieldLayout = ({
 			{field.map((item, index) => (
 				<button
 					key={index}
-					className={styles.button}
+					className={styles['button-field']}
 					type="button"
 					onClick={() => clickOfMove(index)}
 				>
@@ -18,4 +19,9 @@ export const FieldLayout = ({
 			))}
 		</>
 	);
+};
+
+FieldLayout.prototypes = {
+	field: PropTypes.array,
+	clickOfMove: PropTypes.func,
 };

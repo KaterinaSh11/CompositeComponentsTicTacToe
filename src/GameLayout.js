@@ -1,6 +1,7 @@
 import styles from './Game.module.css';
 import { Field } from './Field';
 import { Information } from './Information';
+import PropTypes from 'prop-types';
 
 export const GameLayout = ({
 	field,
@@ -37,4 +38,16 @@ export const GameLayout = ({
 			</div>
 		</>
 	);
+};
+
+GameLayout.prototypes = {
+	field: PropTypes.array,
+	setField: PropTypes.func,
+	currentPlayer: PropTypes.string,
+	setCurrentPlayer: PropTypes.func,
+	isDraw: PropTypes.bool,
+	isGameEnded: PropTypes.bool,
+	setIsDraw: PropTypes.func,
+	setIsGameEnded: PropTypes.func,
+	clearArr: PropTypes.func,
 };

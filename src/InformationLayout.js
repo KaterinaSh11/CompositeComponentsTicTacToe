@@ -1,11 +1,9 @@
-import styles from './Game.module.css';
-//import { Field } from './Field';
+import styles from './Information.module.css';
+import PropTypes from 'prop-types';
 
 export const InformationLayout = ({ currentPlayer, isDraw, isGameEnded }) => {
 	return (
 		<>
-			{/* <h1 className={styles.turn}>Сейчас ходят {currentPlayer}-ки</h1> */}
-
 			{isDraw === true && <h1 className={styles.turn}>Ничья</h1>}
 			{isDraw === false && isGameEnded === true && (
 				<h1 className={styles.turn}>Победа {currentPlayer}</h1>
@@ -17,8 +15,9 @@ export const InformationLayout = ({ currentPlayer, isDraw, isGameEnded }) => {
 	);
 };
 
-// Если isDraw равен true — 'Ничья' ;
-// Если isDraw равен false , но isGameEnded равен true — `Победа:
-// ${currentPlayer}` ;
-// Если isDraw равен false и isGameEnded равен false — `Ходит:
-// ${currentPlayer}` .
+InformationLayout.prototypes = {
+	currentPlayer: PropTypes.string,
+	isDraw: PropTypes.bool,
+	isGameEnded: PropTypes.bool,
+};
+
