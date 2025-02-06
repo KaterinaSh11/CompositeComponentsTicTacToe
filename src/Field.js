@@ -1,7 +1,6 @@
 import { FieldLayout } from './FieldLayout';
 import PropTypes from 'prop-types';
 
-
 const WIN_PATTERNS = [
 	[0, 1, 2],
 	[3, 4, 5],
